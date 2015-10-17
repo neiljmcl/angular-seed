@@ -9,7 +9,8 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', function($scope ) {
+.controller('View1Ctrl', ['$scope', '$log', function($scope, $log ) {
+        $log.info("Called the View1Ctrl");
   $scope.durian = "durian";
       $scope.aubergine="pea aubergine";
       $scope.apple = "apple"
