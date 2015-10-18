@@ -7,4 +7,11 @@ angular.module('myApp.navigationBar', [])
         templateUrl: 'navigation_bar/navigation_bar.html',
         scope: {}
       };
+    })
+    .directive('dashboardBody', function() {
+      return {
+        restrict: 'E',
+        templateUrl: 'navigation_bar/dashboard_body.html',
+        scope: {}
+      };
     });
