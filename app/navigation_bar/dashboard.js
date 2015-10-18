@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.navigationBar', [])
+angular.module('myApp.dashboard', [])
      .directive('navigationBar', function() {
       return {
         restrict: 'E',
