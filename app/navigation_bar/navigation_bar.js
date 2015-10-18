@@ -23,4 +23,13 @@ angular.module('myApp.navigationBar', [])
         scope: {}
       };
     })
+    .directive('dashboardMenu', function() {
+      return {
+        restrict: 'E',
+        transclude: true,
+        templateUrl: 'navigation_bar/dashboard_menu.html',
+        scope: {}
+      };
+    })
+
 ;
