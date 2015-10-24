@@ -8,6 +8,13 @@ angular.module('myApp.dashboard', [])
         scope: {}
       };
     })
+    .directive('dashboard', function() {
+      return {restrict: 'E',
+        templateUrl: 'navigation_bar/dashboard.html',
+        scope: {}
+      };
+
+    })
     .directive('dashboardBody', function() {
       return {
         restrict: 'E',
