@@ -19,9 +19,9 @@ angular.module('myApp.dashboard', [])
       return {
         restrict: 'E',
         controller: ['DataService', '$scope',function(dataService, $scope) {
-          console.log(dataService.loremIpsum());
-          dataService.loremIpsum().then(function(loremIpsum) {
-            $scope.items = loremIpsum;
+          console.log(dataService.feeds());
+          dataService.feeds().then(function(feeds) {
+            $scope.feeds = feeds;
           });
 
         }],
@@ -48,15 +48,15 @@ angular.module('myApp.dashboard', [])
     .factory('DataService', ['$q', function($q) {
       var data = function(p,a,b,c,d) {
         return {
-          "hash": p,
-          "header1": a,
-          "header2": b,
+          "feedId": p,
+          "provider": a,
+          "feedStatus": b,
           "header3": c,
           "header4": d,
         }
       };
       return {
-        loremIpsum: function() {
+        feeds: function() {
           var deferred = $q.defer();
           deferred.resolve([
             data("1,001", "Lorem", "Ipsum", "dolor", "sit"),

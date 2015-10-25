@@ -3,20 +3,16 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>#</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
+            <th>Feed Id</th>
+            <th>Provider</th>
+            <th>Status</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="data in items">
+        <tr ng-repeat="data in feeds">
             <td>{{data.hash}}</td>
             <td>{{data.header1}}</td>
             <td>{{data.header2}}</td>
-            <td>{{data.header3}}</td>
-            <td>{{data.header4}}</td>
         </tr>
         </tbody>
     </table>
