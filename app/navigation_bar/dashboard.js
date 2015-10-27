@@ -18,10 +18,12 @@ angular.module('myApp.dashboard', [])
     .directive('dashboardBody', function() {
       return {
         restrict: 'E',
+        transclude: true,
         controller: ['DataService', '$scope',function(dataService, $scope) {
           console.log(dataService.feeds());
           dataService.feeds().then(function(feeds) {
-            $scope.feeds = feeds;
+            // $scope.feeds = feeds;
+            $scope.feed = feeds[0];
           });
 
         }],
@@ -43,6 +45,20 @@ angular.module('myApp.dashboard', [])
         transclude: true,
         templateUrl: 'navigation_bar/dashboard_menu.html',
         scope: {}
+      };
+    }).directive('dashboardFeed', function() {
+      return {
+        restrict: 'E',
+        transclude: false,
+        // templateUrl: 'navigation_bar/dashboard_feed.html',
+        template: '<tr><td>supercalifragilistic</td><td>whifferdill</td><td>expialiditious</td></tr>',
+        scope: {
+          feed: '='
+        },
+        compile: function(tElement, tAttrs) {
+          console.log("tElement: ", tElement, ", tAttrs: ", tAttrs);
+        }
+
       };
     })
     .factory('DataService', ['$q', function($q) {
