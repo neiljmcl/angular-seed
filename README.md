@@ -53,6 +53,9 @@ We have preconfigured `npm` to automatically run `bower` so we can simply do:
 npm install
 ```
 
+NB: if you're behind a firewall `git config --global url."https://".insteadOf git://` is your friend.
+
+
 Behind the scenes this will also call `bower install`.  You should find that you have two new
 folders in your project.
 
