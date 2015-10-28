@@ -87,5 +87,10 @@ angular.module('myApp.dashboard', [])
           return deferred.promise;
         }
       };
-    }]);
+    }]).directive('arse', function() {
+      return {
+        restrict: 'E',
+        template: '<div>arse</div>'
+      };
+    });
 
