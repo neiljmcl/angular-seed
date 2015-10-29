@@ -1,9 +1,9 @@
 /**
- * Created by krantor on 28/10/2015.
+ * Created by neiljmcl on 28/10/2015.
  */
 
 
-describe("Some general tests", function() {
+describe("General tests on directives...", function() {
   jasmine.DEFAULT_TIMEOUT_INTERVAL = 1500;
   var $compile, $rootScope;
   beforeEach(module('myApp.dashboard'));

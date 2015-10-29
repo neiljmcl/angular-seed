@@ -50,8 +50,8 @@ angular.module('myApp.dashboard', [])
       return {
         restrict: 'E',
         transclude: false,
-        // templateUrl: 'navigation_bar/dashboard_feed.html',
-        template: '<tr><td>supercalifragilistic</td><td>whifferdill</td><td>expialiditious</td></tr>',
+        templateUrl: 'navigation_bar/dashboard_feed.html',
+        // template: '<tr><td>supercalifragilistic</td><td>whifferdill</td><td>expialiditious</td></tr>',
         scope: {
           feed: '='
         },
