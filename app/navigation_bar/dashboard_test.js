@@ -11,9 +11,9 @@ describe("Some general tests", function() {
     $compile = _$compile_;
     $rootScope = _$rootScope_;
   }));
-  it('arse', function(_$compile_, _$rootScope_) {
+  it('arse', function() {
     var element = $compile("<arse></arse>")($rootScope);
     $rootScope.$digest();
-    expect(element.html()).toBe("<div>asre</div>");
+    expect(element.html()).toBe("<div>arse</div>");
   });
 });
