@@ -16,4 +16,9 @@ describe("Some general tests", function() {
     $rootScope.$digest();
     expect(element.html()).toBe("<div>arse</div>");
   });
+  xit("doesn't include itself", function() {
+    var element = $compile("<body><arse></arse></body>")($rootScope);
+    $rootScope.$digest();
+    expect(element.html()).toBe("<body><div>arse</div></body>");
+  });
 });
