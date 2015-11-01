@@ -22,11 +22,7 @@ angular.module('myApp.dashboard', [])
         controller: ['DataService', '$scope', '$element', '$transclude',
           function(dataService, $scope, $element, $transclude) {
             $element.find("tr").append($transclude($scope));
-          dataService.feeds().then(function(feeds) {
-            // console.log($transclude());
-            // $scope.feeds = feeds;
-            $scope.feed = feeds[0];
-          });
+
           this.addColumn = function(colName, property) {
             console.log("Adding column: ", colName);
           };
