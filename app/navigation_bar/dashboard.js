@@ -27,7 +27,7 @@ angular.module('myApp.dashboard', [])
 
             $transclude(function(transcludeThis) {
               console.log("-->", transcludeThis);
-              // console.log("-->", $compile());
+              transcludeThis.html("<h1>I see dead people</h1>");
               $element.find("tr").append(transcludeThis);
             });
         }],
@@ -39,6 +39,7 @@ angular.module('myApp.dashboard', [])
       return {
         require: "^dashboardBody",
         restrict: "E",
+        replace: true,
         template: "<div>what a pile of curried rats intestines</div>",
 
         transclude: false,
