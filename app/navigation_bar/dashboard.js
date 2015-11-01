@@ -19,9 +19,11 @@ angular.module('myApp.dashboard', [])
       return {
         restrict: 'E',
         transclude: true,
-        controller: ['DataService', '$scope',function(dataService, $scope) {
-          console.log(dataService.feeds());
+        controller: ['DataService', '$scope', '$element', '$transclude',
+          function(dataService, $scope, $element, $transclude) {
+            $element.find("tr").append($transclude($scope));
           dataService.feeds().then(function(feeds) {
+            // console.log($transclude());
             // $scope.feeds = feeds;
             $scope.feed = feeds[0];
           });
