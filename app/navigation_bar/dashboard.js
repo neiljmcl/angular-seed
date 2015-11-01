@@ -39,6 +39,7 @@ angular.module('myApp.dashboard', [])
       return {
         require: "^dashboardBody",
         restrict: "E",
+        template: "<div>what a pile of curried rats intestines</div>",
 
         transclude: false,
         link: function(scope, element, attrs, dashboardBody) {
