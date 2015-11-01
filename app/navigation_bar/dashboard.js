@@ -21,12 +21,15 @@ angular.module('myApp.dashboard', [])
         transclude: true,
         controller: ['DataService', '$scope', '$element', '$transclude',
           function(dataService, $scope, $element, $transclude) {
-            $element.find("tr").append($transclude($scope));
+            this.addColumn = function(colName, property) {
+              console.log("Adding column: ", colName);
+            };
 
-          this.addColumn = function(colName, property) {
-            console.log("Adding column: ", colName);
-          };
-
+            $transclude(function(transcludeThis) {
+              console.log("-->", transcludeThis);
+              // console.log("-->", $compile());
+              $element.find("tr").append(transcludeThis);
+            });
         }],
         templateUrl: 'navigation_bar/dashboard_body.html',
         scope: {}
@@ -36,6 +39,7 @@ angular.module('myApp.dashboard', [])
       return {
         require: "^dashboardBody",
         restrict: "E",
+
         transclude: false,
         link: function(scope, element, attrs, dashboardBody) {
           dashboardBody.addColumn("Feed id", "feedId");
