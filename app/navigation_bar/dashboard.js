@@ -46,22 +46,7 @@ angular.module('myApp.dashboard', [])
         templateUrl: 'navigation_bar/dashboard_menu.html',
         scope: {}
       };
-    }).directive('dashboardFeed', function() {
-      return {
-        restrict: 'E',
-        transclude: false,
-        templateUrl: 'navigation_bar/dashboard_feed.html',
-        // template: '<tr><td>supercalifragilistic</td><td>whifferdill</td><td>expialiditious</td></tr>',
-        scope: {
-          feed: '='
-        },
-        compile: function(tElement, tAttrs) {
-          console.log("tElement: ", tElement, ", tAttrs: ", tAttrs);
-        }
-
-      };
-    })
-    .factory('DataService', ['$q', function($q) {
+    }).factory('DataService', ['$q', function($q) {
       var data = function(p,a,b,c,d) {
         return {
           "feedId": p,
