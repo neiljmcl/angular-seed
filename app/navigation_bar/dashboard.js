@@ -25,10 +25,23 @@ angular.module('myApp.dashboard', [])
             // $scope.feeds = feeds;
             $scope.feed = feeds[0];
           });
+          this.addColumn = function(colName, property) {
+            console.log("Adding column: ", colName);
+          };
 
         }],
         templateUrl: 'navigation_bar/dashboard_body.html',
         scope: {}
+      };
+    })
+    .directive('feedId', function() {
+      return {
+        require: "^dashboardBody",
+        restrict: "E",
+        transclude: false,
+        link: function(scope, element, attrs, dashboardBody) {
+          dashboardBody.addColumn("Feed id", "feedId");
+        }
       };
     })
     .directive('dashboardHead', function() {
