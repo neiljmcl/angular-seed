@@ -27,8 +27,9 @@ angular.module('myApp.dashboard', [])
 
             $transclude(function(transcludeThis) {
               console.log("-->", transcludeThis);
-              transcludeThis.html("<h1>I see dead people</h1>");
+              // transcludeThis.html("<h1>I see dead people</h1>");
               $element.find("tr").append(transcludeThis);
+              $element.find("tbody").append("<tr><td>bing</td><td>bang</td><td>bong</td><td>boo</td></tr>")
             });
         }],
         templateUrl: 'navigation_bar/dashboard_body.html',
@@ -40,7 +41,7 @@ angular.module('myApp.dashboard', [])
         require: "^dashboardBody",
         restrict: "E",
         replace: true,
-        template: "<div>what a pile of curried rats intestines</div>",
+        template: "<th>what a pile of curried rats intestines</th>",
 
         transclude: false,
         link: function(scope, element, attrs, dashboardBody) {
